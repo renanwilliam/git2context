@@ -6,6 +6,10 @@
 
 Git2Context is a tool that converts GitHub repositories into markdown context files optimized for Large Language Models (LLMs). It helps you create better prompts by providing structured code context from your repositories.
 
+## Demo
+
+Try it out: [https://git2context.vercel.app](https://git2context.vercel.app)
+
 ## Features
 
 - 🔄 Convert GitHub repositories into markdown files
@@ -36,9 +40,9 @@ npm install
 ```
 
 3. Create a GitHub OAuth App:
-    - Go to GitHub Settings > Developer Settings > OAuth Apps > New OAuth App
-    - Set Homepage URL to `http://localhost:3000` (for development)
-    - Set Authorization callback URL to `http://localhost:3000`
+   - Go to GitHub Settings > Developer Settings > OAuth Apps > New OAuth App
+   - Set Homepage URL to `http://localhost:3000` (for development)
+   - Set Authorization callback URL to `http://localhost:3000`
 
 4. Create a `.env.local` file:
 ```env
