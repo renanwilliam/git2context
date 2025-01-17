@@ -225,7 +225,6 @@ const GitToMarkdown = () => {
             const treeResponse = await fetchWithAuth(apiUrl);
             const treeData = await treeResponse.json();
 
-            const validExtensions = ['toml', 'rs', 'qml', 'cpp', 'h', 'md', 'r', 'rmd', 'ts', 'js', 'mjs', 'json'];
             const files = treeData.tree.filter(file =>
                 file.type === 'blob' &&
                 validExtensions.includes(file.path.split('.').pop().toLowerCase())
