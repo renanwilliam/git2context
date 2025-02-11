@@ -174,10 +174,10 @@ const GitToMarkdown = () => {
         const response = await fetch(url, { headers });
         console.log('Response status:', response.status);
 
-        if (response.status === 401 || response.status === 404) {
+        if ([401, 403, 404].includes(response.status)) {
             if (isFirstTry && !accessToken) {
                 setNeedsAuth(true);
-                throw new Error('This might be a private repository. Please login with GitHub to access it.');
+                throw new Error('This might be a private repository or your are rate limited. Please login with GitHub to access it.');
             }
             if (response.status === 401) {
                 setAccessToken('');
