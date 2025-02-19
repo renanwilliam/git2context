@@ -227,7 +227,8 @@ const GitToMarkdown = () => {
 
             const files = treeData.tree.filter(file =>
                 file.type === 'blob' &&
-                validExtensions.includes(file.path.split('.').pop().toLowerCase())
+                validExtensions.includes(file.path.split('.').pop().toLowerCase())  &&
+                file.path !== 'package-lock.json'
             );
 
             console.log('Files found:', files.length);
